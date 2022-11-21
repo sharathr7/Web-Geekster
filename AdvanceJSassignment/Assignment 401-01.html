@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            box-sizing: border-box;
+        }
 
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input{
+            margin-top: 250px;
+            padding: 8px;
+            width: 250px;
+            border: 2px solid aqua;
+            outline: none;
+        }
+
+        /* .no-outline:focus{
+            outline: none;
+        } */
+
+        .wrote{
+            margin-top: 20px;
+            font-size: 20px;
+            font-style: italic
+        }
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" class="no-outline">
+    </div>
+    <div>
+        <p class="wrote"></p>
+    </div>
+    <script>
+        document.getElementsByTagName('input')[0].addEventListener('keyup',print)
+
+        let inputText= document.getElementsByTagName('input')[0]
+
+        function print(){
+            document.getElementsByClassName('wrote')[0].innerText=`${inputText.value}`
+        }
+    </script>
+</body>
+</html>
