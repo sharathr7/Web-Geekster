@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<title>Online HTML Editor</title>
+<head>
+</head>
+<body>
+<div>
+<p id="p1">  </p>
+</div>
+<div class="button">
+
+</div>
+
+<script>
+    const click = document.createElement("button")
+    const bt = document.getElementsByClassName("button")[0]
+    let para = document.getElementById("p1")
+    para.style.fontSize="20px"
+
+    click.style.width="100px"
+    click.style.height="30px"
+    click.innerText="Click"
+    bt.append(click)
+
+    click.addEventListener('click',() =>
+    {
+        para.innerText="This is paragraph"
+    })
+
+</script>
+
+</body>
+</html>
