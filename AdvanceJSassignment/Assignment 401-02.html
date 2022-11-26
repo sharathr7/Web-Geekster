@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .main-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .has-children{
+            margin-top: 30px;
+        }
+
+        .has-children li{
+            list-style: none;
+            border: 2px solid black;
+            padding: 5px 18px;
+            margin-top: 5px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <ul class="has-children">
+            <li id="1">1st child</li>
+            <li id="2">2nd child</li>
+            <li id="3">3rd child</li>
+            <li id="4">4th child</li>
+            <li id="5">5th child</li>
+            <li id="6">6th child</li>
+            <li id="7">7th child</li>
+            <li id="8">8th child</li>
+            <li id="9">9th child</li>
+            <li id="10">10th child</li>
+            <li id="11">11th child</li>
+            <li id="12">12th child</li>
+            <li id="13">13th child</li>
+            <li id="14">14th child</li>
+            <li id="15">15th child</li>
+            <li id="16">16th child</li>
+            <li id="17">17th child</li>
+        </ul>
+    </div>
+
+    <script>
+
+        for(let i=1;i<=17;i++)
+        {
+            const list =document.getElementById(`${i}`);
+
+            if(i===1)
+            {
+                list.style.backgroundColor='blue'
+                list.style.color='white';
+            }else if(i==17){
+                list.style.backgroundColor='palevioletred';
+                list.style.color='white';
+            }else if(i==9){
+                list.style.backgroundColor='green';
+                list.style.color='white';
+            }else if(i%2==0){
+                list.style.backgroundColor='lime';
+                list.style.color='white';
+            }
+        }
+
+    </script>
+</body>
+</html>
