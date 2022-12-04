@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body{
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        #heading{
+            font-size: 36px;
+            color: green;
+            margin-bottom: 28px;
+        }
+
+        #button{
+            margin-top: 28px;
+            padding: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">Geekster</h1>
+    <h3 id="heading_note">Click on the button to add image element</h3>
+    <button id="button">click here</button>
+
+    <script>
+        const button=document.getElementById('button');
+        const note=document.createElement('h2');
+        const image=document.createElement('img');
+
+        note.innerText="Image Element Added.";
+        note.style.fontSize="28px";
+        note.style.color="green";
+        note.style.marginTop="36px"
+
+        image.setAttribute('src','https://tse3.mm.bing.net/th?id=OIP.e8wXLe2epW_UQgt4qW7jjQHaB6&pid=Api&P=0');
+        image.style.marginTop="24px";
+        image.style.width="200px";
+        image.style.height="50px";
+
+        button.addEventListener('click',()=>{
+            document.body.appendChild(note);
+            document.body.appendChild(image);
+        })
+    </script>
+</body>
+</html>
