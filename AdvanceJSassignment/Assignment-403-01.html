@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body{
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top:80px;
+        }
+
+       #main,#num_container{
+            background-color: white;
+            box-shadow: 0px 6px 16px 1px black;
+            padding: 26px 84px;
+            font-size: 30px;
+            margin-top: 40px;
+            display: flex;
+        }
+
+        #num_container
+        {
+            font-size: 100px;
+            color: green;
+            display: none;
+        }
+
+        #key_name{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1 id="container">Press any keyboard key</h1>
+        
+        <h1 id="key_name"></h1>
+    </div>
+    <span id="num_container">1</span>
+
+    <script>
+        document.addEventListener("keydown", e => {
+            var x = event.key;
+            var y=event.keyCode;
+
+            document.getElementById("num_container").style.display="block"
+            document.getElementById("container").innerHTML=`You pressed :`
+            document.getElementById("key_name").innerHTML=x;
+            document.getElementById("num_container").innerHTML=y;
+        });
+    </script>
+</body>
+</html>

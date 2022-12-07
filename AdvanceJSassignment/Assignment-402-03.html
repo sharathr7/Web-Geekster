@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body{
+            padding: 50px;
+        }
+
+        #container{
+            margin-top: 30px;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        #lists{
+            margin-top: 30px;
+            margin-left: 30px;
+        }
+
+        #list_container{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        .close{
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">My shopping list</h1>
+    <div id="container">
+        <h3 id="suggesion">Enter a new item:</h3>
+        <input id="input" type="text">
+        <button id="add_button" onclick="newElement()">Add item</button>
+    </div>
+    <ul id="lists">
+        <div id="list_container">
+            <li>Eggs</li>
+            <button id="delete_button">delete</button>
+        </div>
+    </ul>
+
+    <script>
+        const addButton=document.getElementById('add_button');
+        const deleteButton=document.getElementById('delete_button');
+        let ul=document.getElementById('lists');
+
+        // addButton.addEventListener('click',newElement());
+
+        function newElement(){
+            var li=document.createElement('li');
+            li.style.marginTop="20px"
+            var inputValue=document.getElementById('input').value;
+            var t=document.createTextNode(inputValue)
+            li.appendChild(t);
+            let html=''
+            if(inputValue === '')
+            {
+                alert("Please provide text");
+            }else{
+                ul.appendChild(li)
+            }
+            document.getElementById('input').value = "";
+
+            var span=document.createElement('button');
+            var txt=document.createTextNode("delete");
+            span.className="close";
+            span.appendChild(txt);
+            li.appendChild(span)
+
+            span.addEventListener('click',()=>
+            {
+                li.style.display="none";
+            })
+        }
+    </script>
+</body>
+</html>
