@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universities</title>
+    <style>
+        *{
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #search_container{
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            color: white;
+            margin-top: 30px;
+            justify-content: space-evenly;
+            height: 250px;
+            width: 400px;
+            align-items: center;
+            box-shadow: 0px 0px 10px 0px white;
+            border-radius: 4px;
+            background-color: rgb(66, 70, 73);
+        }
+
+        #search_container input{
+            width:330px;
+            height: 30px;
+            padding: 8px;
+            outline: none;
+        }
+
+        #search_button{
+            background-color: aqua;
+            color: white;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #content_container{
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            width: 100vw;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        #cards{
+            width:350px;
+            height: 150px;
+            background-color: aqua;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        #cards h3{
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="search_container">
+        <h1>University List</h1>
+        <input id="country_input" placeholder="Country" type="text">
+        <input id="state_input" placeholder="state" type="text">
+        <button id="search_button">Search</button>
+    </div>
+    <div id="content_container">
+      
+    </div>
+
+    <script>
+        const country=document.getElementById('country_input');
+        const state=document.getElementById('state_name');
+        const searchButton=document.getElementById('search_button');
+        const cardsContainer=document.getElementById('content_container')
+
+        init();
+
+        function init(){
+            searchButton.addEventListener('click',fetchDetails)
+
+            country.addEventListener('keyup',(event)=>{
+                if(event.key === 'Enter')
+                {
+                    fetchDetails();
+                }
+            })
+        }
+
+        
+        async function fetchDetails(){
+            const countryName=country.value;
+            const streamResponse= await fetch(`http://universities.hipolabs.com/search?country=${countryName}`)
+            const textBody=await streamResponse.text();
+            const jsonData=JSON.parse(textBody);
+
+            // cardsContainer.style.backgroundColor="silver";
+            let html='';
+            for(let i=0;i<jsonData.length;i++)
+            {
+
+                html+=`<div id="cards">
+                        <h3>University Name : <span id="university_name">${jsonData[i].name}</span> </h3>
+                        <h3>University Site URL : <span id="university_site">${jsonData[i].web_pages[0]}</span> </h3>
+                        </div>`
+            }
+            cardsContainer.innerHTML=html;
+        }
+
+    </script>
+</body>
+</html>
