@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetShop</title>
+    <style>
+        *{
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+        }
+
+        #header{
+            padding: 10px 30px;
+            height: 60px;
+            display: flex;
+            background-color: white;
+            box-shadow: 0px 0px 12px 1px black;
+            align-items: center;
+        }
+
+        #header_info{
+            display: flex;
+            justify-content: space-between;
+            margin-left: 64px;
+            width: 386px;
+        }
+
+        #header_info h4:hover, #icons:hover{
+            cursor: pointer;
+            color: orange;
+        }
+
+        #icons{
+            display: flex;
+            justify-content: space-between;
+            width: 84px;
+            margin-left: 474px;
+        }
+
+        #categories_containers{
+            display: flex;
+            flex-direction: column;
+            padding: 0px 26px;
+            background-color: rgba(112, 128, 144, 0.356);
+            height: 360px;
+        }
+
+        #sub_heading{
+            text-align: center;
+            padding: 30px;
+        }
+
+        .categories_name img{
+            height:180px;
+            width: 190px;
+            border-radius: 8px;
+        }
+
+        .categories_name img:hover{
+            width:210px;
+            height: 210px;
+            box-shadow: 0px 0px 12px 0px black;
+            cursor: pointer;
+        }
+
+        #span{
+            color: orangered;
+        }
+
+        #categories_list{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .categories_name{
+            height: 200px;
+            width: 190px;
+        }
+
+        .categories_name h3{
+            text-align: center;
+            margin-top: 6px;
+            color: rgb(157, 57, 53);
+        }
+
+        #content_containers{
+            background-color: aliceblue;
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 20px;
+            box-shadow: 0px 0px 12px -1px black;
+        }
+
+        #content_container{
+            width: 360px;
+            height: 260px;
+            display: flex;
+            background-color: orange;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            border-radius: 50px;
+        }
+
+        #content_container img{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+
+        #content_container img:hover{
+            width:210px;
+            height: 210px;
+            box-shadow: 0px 0px 12px 0px black;
+            cursor: pointer;
+        }
+
+        .content_name h2{
+            font-size:12px;
+            margin-bottom: 10px;
+        }
+
+        .content_name h1{
+            font-size: 22px;
+        }
+
+    </style>
+    <script src="https://kit.fontawesome.com/31fa433508.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+            <h1 id="heading">Kitter</h1>
+            <div id="header_info">
+                <h4>Home</h4>
+                <h4>Shop</h4>
+                <h4>Collections</h4>
+                <h4>Blogs</h4>
+                <h4>Contact</h4>
+            </div>
+            <div id="icons">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+    </div>
+    <div id="categories_containers">
+        <h1 id="sub_heading"><span id="span">Top</span> categories</h1>
+        <div id="categories_list">
+            <div class="categories_name 1">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.YDruH0GPqo2O9-_aIkCleQHaHa&pid=Api&P=0" alt="">
+                <h3>Cat Food</h3>
+            </div>
+            <div class="categories_name 1">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.HQy5zmuJbZPz8M6zeUtoowHaE3&pid=Api&P=0" alt="">
+                <h3>Cat Toys</h3>
+            </div>
+            <div class="categories_name 1">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.hMXL5TKmcsfefBpj8KfmJAHaHa&pid=Api&P=0" alt="">
+                <h3>Dog Food</h3>
+            </div>
+            <div class="categories_name 1">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.Ofl6nci-_wX-GDjCsx6rEwHaHa&pid=Api&P=0" alt="">
+                <h3>Dog Toys</h3>
+            </div>
+            <div class="categories_name 1">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.hYwg4wMhHGggxavWBfJjcAHaFz&pid=Api&P=0" alt="">
+                <h3>Dog Supplements</h3>
+            </div>
+        </div>
+    </div>
+    <div  id="content_containers">
+        <div id="content_container">
+            <div class="content_name">
+                <h2>SELECTED ITEMS. ONLINE ONLY</h2>
+                <h1>Hot Summer Deals</h1>
+            </div>
+            <img src="https://tse2.mm.bing.net/th?id=OIP.XU8eVH7ZFlTw4rP7LZHhLAHaEo&pid=Api&P=0" alt="">
+        </div>
+        <div id="content_container">
+            <div class="content_name">
+                <h2>TREATS AND GROOMING</h2>
+                <h1>Spoil your true love</h1>
+            </div>
+            <img src="https://tse1.mm.bing.net/th?id=OIP.56ac_l2OXFfH2ADLobaztQHaFj&pid=Api&P=0" alt="">
+        </div>
+        <div id="content_container">
+            <div class="content_name">
+                <h2>OUR BRAND YOU WILL LOVE</h2>
+                <h1>New in this year</h1>
+            </div>
+            <img src="https://tse2.mm.bing.net/th?id=OIP.T99lb9KIU8aNu_J2Xlm3pQHaEo&pid=Api&P=0" alt="">
+        </div>
+
+
+        <script>
+            const slide=document.getElementById('categories_list');
+            
+            function scrollAnimation() {
+                let count = 0
+                let flag = true
+                setInterval(() => {
+                    const endPoint = slide.scrollWidth;
+                    if (flag) {
+                        count += 1
+                        if (count === endPoint) {
+                            flag = false
+                        }
+                    } else {
+                        count -= 1
+                        if (count === 0) {
+                            flag = true
+                        }
+                    }
+                    slide.scrollTo(count, 0)
+                }, 10)
+            }
+
+            scrollAnimation();
+        </script>
+</body>
+</html>
