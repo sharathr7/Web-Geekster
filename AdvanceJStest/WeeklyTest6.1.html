@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Images</title>
+    <style>
+        *{
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color:silver;
+        }
+
+        #header{
+            height: 96px;
+            padding: 20px;
+            text-align: center;
+            background-color: white;
+            box-shadow: 0px 0px 12px 1px black;
+        }
+
+        #span{
+            color: orangered;
+        }
+
+        #sub_heading{
+            margin-top: 10px;
+            color: rgba(76, 76, 217, 0.52);
+        }
+
+        #content img{
+            height: 350px;
+            width: 350px;
+            margin-top: 20px;
+            border-radius: 30%;
+        }
+
+        /* #content img:hover{
+            height: 400px;
+            width: 400px;
+            box-shadow: 0px 0px 12px 0px black;
+            cursor: pointer;
+        } */
+
+        #content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        #button{
+            padding: 20px;
+            color: white;
+            background-color: rgb(208, 16, 16);
+            border-radius: 50%;
+            border: none;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        #button:hover{
+            box-shadow: 0px 0px 12px 0px black;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+        <div id="header">
+            <h1 id="heading"><span id="span">Dog</span> Images</h1>
+            <h4 id="sub_heading">click on BUTTON to get other images</h4>
+        </div>
+        <div id="content">
+            <img id="dogs_img" alt="click on button to get image">
+            <button id="button">GET IMAGES</button>
+        </div>
+
+        <script>
+            const searchButton=document.getElementById('button');
+            const image=document.getElementById('dogs_img');
+
+            init()
+
+            function  init(){
+                searchButton.addEventListener('click',getImages);
+            }
+
+            async function getImages(){
+                const res = await fetch(`https://dog.ceo/api/breeds/image/random`)
+                const jsonData = await res.json()
+                image.setAttribute('src',`${jsonData.message}`);    
+            }
+        </script>
+</body>
+</html>
